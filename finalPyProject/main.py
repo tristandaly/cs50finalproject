@@ -4,8 +4,11 @@ from inventory import *
 from out_front import *
 from out_front_interaction import *
 from path_west import *
+from path_west_interaction import *
 from porch import *
 from porch_interaction import *
+from accessible_room import *
+from accessible_room_interaction import *
 import os
 import time
 
@@ -83,6 +86,7 @@ def go(direction):
         look()
     else:
         print(f"You can't go that way!")
+        
 
 
 
@@ -120,7 +124,7 @@ if __name__ == "__main__":
         y_n_answer = input("Are you ready to begin? y/n\n")
         if y_n_answer == 'y':
             clear()
-            say(current_room)
+            print(current_room)
             print()
             start()
         if y_n_answer == 'n':

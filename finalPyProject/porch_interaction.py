@@ -70,7 +70,7 @@ def left_window_kick():
     if current_room == porch:
         if get_context() == 'left_window_kicked':
             say("Nothing happens.")
-        else:    
+        else:
             set_context('left_window_kicked')
             say("""You kick the window. A fog spreads over the entire view of the
             inside until nothing can be seen""")
@@ -83,8 +83,11 @@ def left_window_kick():
 @when('look in right window')
 def right_window_description():
     if current_room == porch:
-        say("""You see an empty room. No larger than a closet. Light shines only
-            from the outside. You see no doors in this room.""")
+        if get_context() == 'right_window_gone':
+            say("You see an accessible room to the NORTH.")
+        else:
+            say("""You see an empty room. No larger than a closet. Light shines only
+                from the outside. You see no doors in this room.""")
     else:
         say('There are no windows here.')
 
@@ -129,10 +132,8 @@ def right_window_kick():
             say("""It is here where you live the rest of your days.""")
             time.sleep(2)
             exit()
-        else:
-            say("""Your feet cannot move.""")
     else:
-        say('')
+        say('There are no windows here.')
 
 #############################################
 

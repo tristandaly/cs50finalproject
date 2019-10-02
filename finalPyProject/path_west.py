@@ -4,10 +4,10 @@ from characters import *
 
 path_west = Room("""
 Brown ground and brown trees about as you make you way through the twisting path.
-There are exits to the west and east.
+The only accessible exit is to the EAST.
+
+ To the west is a GATE which is locked. Dead vines border the gate. There is
+ a faint glow beyond.
  """)
 
 path_west.items = Bag()
-
-goblin_chef = MaleCharacter('a goblin chef', 'Rather full')
-goblin_chef.def_name = 'the goblin chef'

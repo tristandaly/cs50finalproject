@@ -1,7 +1,6 @@
 from adventurelib import *
 from map import *
-from out_front import *
-from path_west import *
+
 
 inventory = Bag()
 
